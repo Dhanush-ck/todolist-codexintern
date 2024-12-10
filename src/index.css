@@ -1,11 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* @apply bg-gray-800; */
+  font-family: "Montserrat",Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* background-color: #242424; */
+  /* background-color: 	#ea9d3e; */
+  background: linear-gradient( 0deg,#ea9d3e, #eec33d );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,56 +20,83 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800 rounded-lg;
+  margin: 5px 0 5px 0;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white rounded-lg
+}
+
+
+.container {
+  @apply w-screen h-screen flex items-center justify-center
+}
+
+.container-elements {
+  @apply w-4/5 h-5/6 flex flex-col gap-3;
+}
+
+.input-area {
+  @apply flex gap-2 justify-center w-full
+}
+
+.input-box {
+  @apply w-full rounded-xl p-2;
+  background-color: 	#312f17;
+}
+
+.add-button {
+  @apply flex items-center justify-center w-10 rounded-xl text-xl;
+  background-color: #312f17;
+}
+
+.list-holder {
+  @apply overflow-x-auto h-full
+}
+
+.lists {
+  @apply gap-2 grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.task {
+  @apply w-full rounded-lg flex items-center flex-col p-2 text-lg gap-2;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: 	#eec33d;
+  margin-bottom: 1em;
+  /* background-color: #FFBF00; */
+  background-color: 	#312f17;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.text {
+  @apply break-words max-w-full text-black p-3 w-full h-full text-center rounded-md ;
+  background-color: 	#eec33d;
+  font-weight: 300;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.keys {
+  @apply grid w-full gap-2;
+  grid-template-columns: auto 1fr;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.checkbox {
+  width: 30px
+}
+
+.buttons {
+  @apply grid grid-cols-2 w-full gap-2;
+}
+
+.delete {
+  @apply border-2 border-yellow-200 rounded-md hover:bg-red-400 hover:text-black
+}
+
+.edit {
+  @apply border-2 border-yellow-200 rounded-md hover:bg-yellow-200 hover:text-black
 }
