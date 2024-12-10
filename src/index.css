@@ -35,7 +35,8 @@
 
 
 .container {
-  @apply w-screen h-screen flex items-center justify-center
+  @apply w-screen h-screen flex items-center justify-center;
+  
 }
 
 .container-elements {
@@ -43,7 +44,9 @@
 }
 
 .input-area {
-  @apply flex gap-2 justify-center w-full
+  @apply flex gap-2 justify-center w-full;
+  opacity: 0;
+  animation: popup 1s ease forwards;
 }
 
 .input-box {
@@ -72,10 +75,12 @@
   margin-bottom: 1em;
   /* background-color: #FFBF00; */
   background-color: 	#312f17;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards
 }
 
 .text {
-  @apply break-words max-w-full text-black p-3 w-full h-full text-center rounded-md ;
+  @apply max-w-full text-black p-3 w-full h-full text-center rounded-md ;
   background-color: 	#eec33d;
   font-weight: 300;
 }
@@ -99,4 +104,42 @@
 
 .edit {
   @apply border-2 border-yellow-200 rounded-md hover:bg-yellow-200 hover:text-black
+}
+
+@keyframes popup {
+  from {
+    transform: translatey(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 350px) {
+  .container-elements {
+    width: 100%;
+    margin: 20px
+  }
+}
+
+@media only screen and (max-width: 350px) {
+
+  .container-elements {
+    @apply w-5/6
+  }
+
+  .lists {
+    @apply block
+  }
 }
