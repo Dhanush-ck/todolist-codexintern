@@ -9,6 +9,9 @@ function App() {
     <TodoContextProvider>
       <div className="container">
         <div className="container-elements">
+          <div className="header">
+            <h2>To Do List</h2>
+          </div>
           <div className="list-holder">
             <TodoList />
           </div>
