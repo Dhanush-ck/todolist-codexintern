@@ -25,7 +25,7 @@ function TodoInput() {
 
     return (
         <div className="input-area">
-            <input type="text" className="input-box" onChange={handleInput} value={input} onKeyDown={handleEnter}/>
+            <input type="text" className="input-box" placeholder="Enter your task" onChange={handleInput} value={input} onKeyDown={handleEnter}/>
             <button className="add-button" onClick={handleSubmit}>+</button>
         </div>
     )
